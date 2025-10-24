@@ -1,0 +1,8 @@
+---
+requires_ansible: ">=2.17.0"
+
+# In case the collection should redirect to other collection
+# plugin_routing:
+#   modules:
+#     kafka_send:
+#       redirect: community.redhat_iberia.kafka_send

@@ -1,0 +1,20 @@
+- name: Test Kafka Module
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Send a message to Kafka
+      kafka_send:
+        topic: test_topic
+        key: test_key
+        headers:
+          test_header1: value1
+          test_header2: value2
+        message: "Hello, Kafka!"
+        bootstrap_servers: "localhost:9092"
+      register: send_result
+
+    - name: Assert message was sent
+      assert:
+        that:
+          - send_result is not none
+          - send_result.status is success

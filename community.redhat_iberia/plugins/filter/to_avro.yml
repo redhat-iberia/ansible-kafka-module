@@ -1,0 +1,47 @@
+DOCUMENTATION:
+  name: to_avro
+  version_added: "1.0.0"
+  short_description: Convert Python objects to Avro binary format
+  description:
+    - This filter plugin provides conversion between Python objects and Avro binary format
+    - Includes to_avro filter for encoding and from_avro filter for decoding
+    - Uses fastavro library for high-performance Avro operations
+  author: Red Hat Iberia
+  options:
+    _input:
+      description: The input value to convert
+      type: raw
+      required: true
+    schema:
+      description: Avro schema definition as a string
+      type: str
+      required: true
+
+EXAMPLES: |
+  # Convert a Python dict to Avro binary
+  - name: Convert user data to Avro
+    vars:
+      user_schema:
+        type: "record"
+        name: "User"
+        fields: [
+          - name: "name"
+            type: "string"
+          - name: "age"
+            type: "int"
+        ]
+      user_data:
+        name: "John Doe"
+        age: 30
+    set_fact:
+      avro_binary: "{{ user_data | to_avro(user_schema) }}"
+
+  # Convert Avro binary back to Python object
+  - name: Decode Avro data
+    vars:
+      decoded_data: "{{ avro_binary | from_avro(user_schema) }}"
+
+RETURN:
+  _value:
+    description: The converted data
+    type: raw

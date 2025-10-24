@@ -1,0 +1,21 @@
+---
+# Copyright (c) Ramon Gordillo
+# GNU General Public License v3.0+ (see LICENSES/GPL-3.0-or-later.txt or https://www.gnu.org/licenses/gpl-3.0.txt)
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+namespace: community
+name: redhat_iberia
+version: 1.0.0
+readme: README.md
+authors:
+  - Ansible (https://github.com/ansible)
+description: >-
+  The community.general collection is a part of the Ansible package and includes many modules and
+  plugins supported by Ansible community which are not part of more specialized community collections.
+license_file: COPYING
+tags:
+  - community
+repository: https://github.com/redhat-iberia/ansible-kafka-module
+documentation: ""
+homepage: https://github.com/redhat-iberia/ansible-kafka-module
+issues: https://github.com/redhat-iberia/ansible-kafka-module/issues
