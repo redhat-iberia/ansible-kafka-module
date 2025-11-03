@@ -4,8 +4,8 @@ DOCUMENTATION:
   short_description: Convert Avro binary data back to Python objects
   description:
     - This filter plugin converts Avro binary data back to Python objects
-    - Uses fastavro library for high-performance Avro operations
-    - Companion filter to to_avro for bidirectional conversion
+    - Uses `fastavro` for high-performance Avro operations
+    - Companion filter to `to_avro` for bidirectional conversion
   author: Red Hat Iberia
   options:
     _input:
@@ -13,8 +13,8 @@ DOCUMENTATION:
       type: raw
       required: true
     schema:
-      description: Avro schema definition as a string
-      type: str
+      description: Avro schema definition as a dict or JSON string
+      type: raw
       required: true
 
 EXAMPLES: |
@@ -31,7 +31,7 @@ EXAMPLES: |
           ]
         }
     set_fact:
-      decoded_user: "{{ avro_binary | from_avro(user_schema) }}"
+      decoded_user: "{{ avro_binary | message_from_avro(user_schema) }}"
 
   # Complete example showing round-trip conversion
   - name: Round-trip conversion example
@@ -40,7 +40,7 @@ EXAMPLES: |
         name: "Jane Smith"
         age: 25
       avro_data: "{{ original_data | to_avro(user_schema) }}"
-      decoded_data: "{{ avro_data | from_avro(user_schema) }}"
+      decoded_data: "{{ avro_data | message_from_avro(user_schema) }}"
     debug:
       msg: "Decoded data matches original: {{ original_data == decoded_data }}"
 

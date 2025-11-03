@@ -1,6 +1,5 @@
 ---
-# Copyright (c) Ramon Gordillo
-# GNU General Public License v3.0+ (see LICENSES/GPL-3.0-or-later.txt or https://www.gnu.org/licenses/gpl-3.0.txt)
+# Collection metadata for Ansible Galaxy
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 namespace: community
@@ -8,14 +7,18 @@ name: redhat_iberia
 version: 1.0.0
 readme: README.md
 authors:
-  - Ansible (https://github.com/ansible)
+  - Ramon Gordillo
 description: >-
-  The community.general collection is a part of the Ansible package and includes many modules and
-  plugins supported by Ansible community which are not part of more specialized community collections.
+  A small collection with Ansible filters and modules to work with Avro data and Apache Kafka.
 license_file: COPYING
 tags:
-  - community
+  - kafka
+  - avro
+  - serializers
+  - filters
 repository: https://github.com/redhat-iberia/ansible-kafka-module
-documentation: ""
+documentation: https://github.com/redhat-iberia/ansible-kafka-module#readme
 homepage: https://github.com/redhat-iberia/ansible-kafka-module
 issues: https://github.com/redhat-iberia/ansible-kafka-module/issues
+# note: python package requirements are documented in the README; collection-level
+# python-only dependencies are not declared here (use system/venv to install them)
