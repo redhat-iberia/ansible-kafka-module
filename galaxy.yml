@@ -1,13 +1,15 @@
 ---
 # Collection metadata for Ansible Galaxy
+# Copyright (c) 2025, Ramon Gordillo <rgordill@redhat.com>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-namespace: community
-name: redhat_iberia
+namespace: redhat_iberia
+name: kafka
 version: 1.0.0
 readme: README.md
 authors:
   - Ramon Gordillo
+  - Luis Boubeta
 description: >-
   A small collection with Ansible filters and modules to work with Avro data and Apache Kafka.
 license_file: COPYING

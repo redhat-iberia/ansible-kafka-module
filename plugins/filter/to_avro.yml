@@ -1,3 +1,6 @@
+# Copyright (c) 2025, Ramon Gordillo <rgordill@redhat.com>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 DOCUMENTATION:
   name: to_avro
   version_added: "1.0.0"

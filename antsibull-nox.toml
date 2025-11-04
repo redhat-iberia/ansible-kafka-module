@@ -1,0 +1,83 @@
+# GNU General Public License v3.0+ (see LICENSES/GPL-3.0-or-later.txt or https://www.gnu.org/licenses/gpl-3.0.txt)
+# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-FileCopyrightText: 2025 Felix Fontein <felix@fontein.de>
+
+[collection_sources]
+# "ansible.posix" = "git+https://github.com/ansible-collections/ansible.posix.git,main"
+# "community.crypto" = "git+https://github.com/ansible-collections/community.crypto.git,main"
+# "community.docker" = "git+https://github.com/ansible-collections/community.docker.git,main"
+# "community.internal_test_tools" = "git+https://github.com/ansible-collections/community.internal_test_tools.git,main"
+
+[vcs]
+vcs = "git"
+development_branch = "main"
+stable_branches = [ "stable-*" ]
+
+[sessions]
+
+[sessions.lint]
+run_isort = false
+run_black = false
+run_ruff_check = true
+ruff_check_config = "ruff.toml"
+run_ruff_format = true
+ruff_format_config = "ruff.toml"
+run_flake8 = false
+run_pylint = false
+run_yamllint = true
+yamllint_config = ".yamllint"
+# yamllint_config_plugins = ".yamllint-docs"
+# yamllint_config_plugins_examples = ".yamllint-examples"
+run_mypy = true
+mypy_ansible_core_package = "ansible-core>=2.19.0"
+mypy_config = ".mypy.ini"
+mypy_extra_deps = [
+    "cryptography",
+    "dnspython",
+    "lxml-stubs",
+    "types-mock",
+    "types-paramiko",
+    "types-passlib",
+    "types-psutil",
+    "types-PyYAML",
+    "types-requests",
+]
+
+[sessions.docs_check]
+validate_collection_refs="all"
+codeblocks_restrict_types = [
+    "ansible-output",
+    "console",
+    "ini",
+    "json",
+    "python",
+    "shell",
+    "yaml",
+    "yaml+jinja",
+    "text",
+]
+codeblocks_restrict_type_exact_case = true
+codeblocks_allow_without_type = false
+codeblocks_allow_literal_blocks = false
+
+[sessions.license_check]
+
+[sessions.extra_checks]
+run_no_unwanted_files = true
+no_unwanted_files_module_extensions = [".py"]
+no_unwanted_files_yaml_extensions = [".yml"]
+run_action_groups = true
+run_no_trailing_whitespace = true
+no_trailing_whitespace_skip_paths = [
+]
+no_trailing_whitespace_skip_directories = [
+]
+
+[sessions.build_import_check]
+run_galaxy_importer = true
+
+[sessions.ansible_test_sanity]
+include_devel = true
+
+[sessions.ansible_test_units]
+include_devel = true
