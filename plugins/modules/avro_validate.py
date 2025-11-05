@@ -10,6 +10,8 @@ from __future__ import annotations
 DOCUMENTATION = r"""
 ---
 module: avro_validate
+collection: redhat_iberia.kafka
+version_added: "1.0.0"
 short_description: Validate data against an Avro schema
 description:
   - This module validates JSON data against an Avro schema using fastavro

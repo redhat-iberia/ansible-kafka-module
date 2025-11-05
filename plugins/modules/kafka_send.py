@@ -9,6 +9,8 @@ from __future__ import annotations
 DOCUMENTATION = r"""
 ---
 module: kafka_send
+collection: redhat_iberia.kafka
+version_added: "1.0.0"
 short_description: Ansible module for interacting with Kafka topics.
 description:
   - This module allows sending and receiving messages from Kafka topics.

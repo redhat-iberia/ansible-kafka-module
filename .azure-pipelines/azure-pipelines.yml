@@ -27,7 +27,7 @@ schedules:
 
 variables:
   - name: checkoutPath
-    value: ansible_collections/community/general
+    value: ansible_collections/redhat_iberia/kafka
   - name: coverageBranches
     value: main
   - name: entryPoint

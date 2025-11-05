@@ -10,6 +10,8 @@ from __future__ import annotations
 DOCUMENTATION = r"""
 ---
 module: avro_generate
+collection: redhat_iberia.kafka
+version_added: "1.0.0"
 short_description: Generate sample data from an Avro schema
 description:
   - This module generates sample data that conforms to a given Avro schema using fastavro
@@ -38,10 +40,8 @@ EXAMPLES = r"""
       type: "record"
       name: "User"
       fields:
-        - name: "name"
-          type: "string"
-        - name: "age"
-          type: "int"
+        - {name: "name", type: "string"}
+        - {name: "age", type: "int"}
 
 - name: Generate multiple samples from schema
   avro_generate:

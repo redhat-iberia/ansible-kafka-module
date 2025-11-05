@@ -1,0 +1,33 @@
+---
+# Copyright (c) Ansible Project
+# GNU General Public License v3.0+ (see LICENSES/GPL-3.0-or-later.txt or https://www.gnu.org/licenses/gpl-3.0.txt)
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+notifications: true
+automerge: true
+files:
+  plugins/filter/to_avro.py:
+    maintainers: $team_redhat_iberia
+  plugins/filter/schema_id_from_avro.py:
+    maintainers: $team_redhat_iberia
+  plugins/filter/message_from_avro.py:
+    maintainers: $team_redhat_iberia
+  plugins/modules/avro_generate.py:
+    maintainers: $team_redhat_iberia
+  plugins/modules/avro_validate.py:
+    maintainers: $team_redhat_iberia
+  plugins/modules/kafka_send.py:
+    maintainers: $team_redhat_iberia
+  changelogs/: {}
+  changelogs/fragments/:
+    support: community
+  tests/:
+    labels: tests
+  tests/integration:
+    labels: integration
+    support: community
+  tests/unit/:
+    labels: unit
+    support: community
+macros:
+  team_redhat_iberia: rgordill lboubeta
